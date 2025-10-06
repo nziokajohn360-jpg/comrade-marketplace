@@ -15,10 +15,10 @@ async function loadProducts() {
 
     const rows = json.table.rows;
 
-    productsContainer.innerHTML = ""; // clear old cards
+    
 
     rows.forEach((row, i) => {
-      if (i === 0) return; // skip header row
+      //if (i === 0) return; // skip header row
 
       const [title, price, seller, category, img, whatsapp] = row.c.map(c => c ? c.v : "");
       const card = document.createElement("div");
