@@ -1,0 +1,308 @@
+
+    :root {
+      --primary: #2D6CDF;   /* Blue */
+      --secondary: #F4F6F9; /* Light background */
+      --accent: #FF7A00;    /* Orange */
+      --text: #333;
+    }
+
+    html,body{
+      zoom:1;
+      transform: none;
+      width:100%;
+      overflow-x:hidden;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--secondary);
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .logo-title{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:0.6rem;
+      white-space: nowrap;
+    }
+
+i{
+  font-size:1.8rem;
+}
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    header h1 span{
+      color:var(--accent)
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+    }
+
+    .search-bar {
+      margin: 1rem auto;
+      max-width: 700px;
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    input, select {
+      padding: 0.6rem;
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+      padding: 1.5rem;
+      align-items: stretch;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /*.card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background-color: #f9f9f9;
+    }
+      */
+
+      .card-image-container{
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow:hidden;
+    }
+
+    .card-image-container img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+      flex: 1;
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .card button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem;
+      cursor: pointer;
+      border-radius: 8px;
+      margin: 0 1rem 1rem;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #1b4fb1;
+    }
+
+    /* Footer (brand-matching) */
+.site-footer {
+  background: var(--primary); /* your blue */
+  color: white;
+  margin-top: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* inner content */
+.footer-inner {
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* brand area */
+.footer-brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 220px;
+}
+
+.footer-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  /* if you have a white logo file, use that for footer */
+}
+
+/* brand text */
+.footer-brand h3 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.footer-brand .tag {
+  margin: 3px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+/* nav links */
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+.footer-links a:hover { text-decoration: underline; }
+
+/* contact column */
+.footer-contact {
+  min-width: 200px;
+  text-align: right;
+}
+
+.footer-contact p{
+  text-align: center;
+}
+
+.footer-contact p { margin: 0 0 6px 0; font-weight: 600; }
+.footer-contact .cta {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 6px 10px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  width: 100px;
+  text-align: center;
+}
+.footer-contact .cta:hover { 
+  opacity: 0.95; 
+  transform: scale(1.1);
+}
+
+/* bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+@media (max-width:480px){
+  header h1{
+  font-size: 1.2rem;
+  }
+
+  .logo-title i{
+    font-size:1.4rem;
+  }
+}
+
+/* --- keep your existing footer CSS --- */
+
+/* Mobile-first responsive fixes */
+@media (max-width: 808px) {
+
+  .card h3{
+    font-size: 1rem;
+  }
+
+  .card button{
+    font-size: 0.8rem;
+  }
+  .footer-inner {
+    flex-direction: column;  /* stack items vertically */
+    align-items: center;     /* center everything */
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links {
+    justify-content: center; /* center links */
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-contact {
+    text-align: center;      /* center "Contact us" */
+    width: 100%;
+  }
+
+  .social {
+    justify-content: center; /* center social icons */
+  }
+}
+
+@media (max-width: 808px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr); /* force 2 columns */
+    gap: 0.8rem; /* optional: make spacing tighter for mobile */
+  }
+}
