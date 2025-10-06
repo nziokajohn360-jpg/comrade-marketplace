@@ -15,7 +15,7 @@ async function loadProducts() {
 
     const rows = json.table.rows;
 
-    //productsContainer.innerHTML = ""; // clear old cards
+    productsContainer.innerHTML = ""; // clear old cards
 
     rows.forEach((row, i) => {
       if (i === 0) return; // skip header row
@@ -86,4 +86,5 @@ function initFiltering() {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Start
+
 loadProducts();
