@@ -1,6 +1,8 @@
+const loading = document.getElementById("loading");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
 const productsContainer = document.getElementById("products");
+const footer = document.getElementById("footer")
 
 // Load products from Google Sheets
 async function loadProducts() {
@@ -15,12 +17,23 @@ async function loadProducts() {
 
     const rows = json.table.rows;
 
-    
-
     rows.forEach((row, i) => {
       //if (i === 0) return; // skip header row
 
-      const [title, price, seller, category, img, whatsapp] = row.c.map(c => c ? c.v : "");
+      //const [title, price, seller, category, rawImageURL, convertedImageURL, whatsapp] = row.c.map(c => c ? c.v : "");
+      const cells = row.c.map(c => (c ? c.v : ""));
+      const title = cells[0];
+      const price = cells[1];
+      const seller = cells[2];
+      const category = cells[3];
+      const rawImageURL = cells[4];
+      const convertedImageURL = cells[5];
+      const whatsapp = cells[6];
+
+      const img = convertedImageURL;
+
+      console.log("Image being used:", img);
+
       const card = document.createElement("div");
       card.className = "card";
       card.dataset.category = category.toLowerCase();
@@ -39,11 +52,25 @@ async function loadProducts() {
         </a>
       `;
       productsContainer.appendChild(card);
-      
+    
     });
+
+    setTimeout(() => {
+        loading.classList.add("fade-out");
+        productsContainer.classList.add("show");
+      }, 800);
+
+    setTimeout(() => {
+      loading.style.display = "none";
+    }, 800);
+    
+    setTimeout(() => {
+      footer.style.display = "block";
+    }, 900);
 
     shuffleCards();     // shuffle after loading
     initFiltering();    // enable search + filter after cards exist
+    
 
   } catch (err) {
     console.error("Error loading products", err);
